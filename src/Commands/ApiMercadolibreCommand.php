@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace JaimeNorato\ApiMercadolibre\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ApiMercadolibreCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'api-mercadolibre';
 
     public $description = 'My command';
 
