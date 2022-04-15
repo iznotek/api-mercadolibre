@@ -2,9 +2,9 @@
 
 namespace JaimeNorato\ApiMercadolibre;
 
+use JaimeNorato\ApiMercadolibre\Commands\ApiMercadolibreCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use JaimeNorato\ApiMercadolibre\Commands\ApiMercadolibreCommand;
 
 class ApiMercadolibreServiceProvider extends PackageServiceProvider
 {
