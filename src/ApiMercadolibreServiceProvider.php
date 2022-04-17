@@ -18,8 +18,17 @@ class ApiMercadolibreServiceProvider extends PackageServiceProvider
         $package
             ->name('api-mercadolibre')
             ->hasConfigFile()
-            ->hasViews()
+            ->hasRoute('api-mercadolibre')
             ->hasMigration('create_api-mercadolibre_table')
             ->hasCommand(ApiMercadolibreCommand::class);
+    }
+
+    public function register(){
+
+//        $this->loadRoutesFrom(__DIR__.'/routes/api-mercadolibre.php');
+
+        $this->app->bind('api-mercadolibre', function($app){
+            return new ApiMercadolibre();
+        });
     }
 }

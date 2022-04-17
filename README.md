@@ -1,14 +1,12 @@
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
-# Es te paquete permite integrar la api de mercado libre, para la conexión con esta plataforma y la sincronización de productos con la misma
+# API MERCADO LIBRE
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jaimenorato/api-mercadolibre.svg?style=flat-square)](https://packagist.org/packages/jaimenorato/api-mercadolibre)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/jaimenorato/api-mercadolibre/run-tests?label=tests)](https://github.com/jaimenorato/api-mercadolibre/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/jaimenorato/api-mercadolibre/Check%20&%20fix%20styling?label=code%20style)](https://github.com/jaimenorato/api-mercadolibre/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jaimenorato/api-mercadolibre.svg?style=flat-square)](https://packagist.org/packages/jaimenorato/api-mercadolibre)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Este paquete permite integrar la api de mercado libre, para la conexión con esta plataforma y la sincronización de productos con la misma
 
 ## Support us
 
@@ -53,6 +51,14 @@ php artisan vendor:publish --tag="api-mercadolibre-views"
 ```
 
 ## Usage
+
+Primero debes de registrar tu app en la api de [mercado libre](https://developers.mercadolibre.com.co/es_ar/registra-tu-aplicacion)
+
+Agrega tus credenciales en el .env
+```env
+MERCADOLIBRE_CLIENT_ID = <client_id>
+MERCADOLIBRE_CLIENT_SECRET = <client_secret>
+```
 
 ```php
 $apiMercadolibre = new JaimeNorato\ApiMercadolibre();
