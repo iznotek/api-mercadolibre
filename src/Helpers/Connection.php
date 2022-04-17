@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 
 class Connection
 {
-    protected static $baseUri="https://api.mercadolibre.com";
+    protected static $baseUri = "https://api.mercadolibre.com";
 
     /*
      * desaroolo de stas uris
@@ -21,14 +21,18 @@ class Connection
      * @return \Exception|\Psr\Http\Message\ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public static function submit(string $method='POST', string $link = "", array $data = null)
+    public static function submit(string $method = 'POST', string $link = "", array $data = null)
     {
-        try{
+        try {
             $client = new Client(['base_uri' => self::$baseUri]);
-            if($data != null) $response = $client->request($method,$link,$data);
-            else $response = $client->request($method,$link);
+            if ($data != null) {
+                $response = $client->request($method, $link, $data);
+            } else {
+                $response = $client->request($method, $link);
+            }
+
             return $response;
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return $exception;
         }
     }
@@ -40,26 +44,33 @@ class Connection
      * @param array|null $data
      * @return \Exception|\GuzzleHttp\Exception\GuzzleException|mixed|\Psr\Http\Message\ResponseInterface
      */
-    public static function sendGetBody(string $method='POST', string $link = "", array $data = null){
+    public static function sendGetBody(string $method = 'POST', string $link = "", array $data = null)
+    {
         try {
             $response = self::submit($method, $link, $data);
-            if(!method_exists($response,"getBody")) return $response;
+            if (! method_exists($response, "getBody")) {
+                return $response;
+            }
+
             return json_decode($response->getBody()->getContents());
         } catch (\GuzzleHttp\Exception\GuzzleException $exception) {
             return $exception;
         }
     }
+
     /**
      * envia una peticion post y devuelve el body de la respuesta
     */
-    public static function post(string $link, array $data = null){
-        return self::sendGetBody('POST',$link,$data);
+    public static function post(string $link, array $data = null)
+    {
+        return self::sendGetBody('POST', $link, $data);
     }
+
     /**
      * envia una peticion get y devuelve el body de la respuesta
     */
-    public static function get(string $link, array $data = null){
-        return self::sendGetBody('GET',$link,$data);
+    public static function get(string $link, array $data = null)
+    {
+        return self::sendGetBody('GET', $link, $data);
     }
-
 }
