@@ -7,7 +7,6 @@ use JaimeNorato\ApiMercadolibre\Helpers\Connection;
 class ApiMercadolibre
 {
     /** Metodos principales de llamada*/
-
     public function get($link, $params = [])
     {
         return Connection::get($link, $params);
@@ -27,6 +26,7 @@ class ApiMercadolibre
     {
         return Connection::post($link, $params);
     }
+
     /**
      * carga el token de autenticacion almacenado
     */
@@ -42,8 +42,10 @@ class ApiMercadolibre
     public function login()
     {
         $url = 'https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id='.config('api-mercadolibre.auth.client_id').'&redirect_uri='.config('api-mercadolibre.auth.redirect_uri');
+
         return redirect($url);
     }
+
     /**
      * obtiene un token de autenticacion
     */
@@ -52,7 +54,7 @@ class ApiMercadolibre
         $params = [
             'grant_type' => 'client_credentials',
             'client_id' => $client_id,
-            'client_secret' => $client_secret
+            'client_secret' => $client_secret,
         ];
 
         return Connection::post('/oauth/token', $params);

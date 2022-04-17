@@ -14,6 +14,7 @@ class MercadoLibre // extends Controller
     {
         ApiMercadolibre::login();
     }
+
     /**
      * recibe el token de mercado libre
     */
@@ -31,6 +32,7 @@ class MercadoLibre // extends Controller
         $url = 'https://api.mercadolibre.com/users/'.$user.'/items/search?access_token='.$token;
         $response = json_decode(file_get_contents($url));
         $items = $response->results;
+
         return view('api-mercadolibre::callback', compact('token', 'name', 'email', 'items'));
     }
 }

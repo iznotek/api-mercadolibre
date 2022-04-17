@@ -23,11 +23,12 @@ class ApiMercadolibreServiceProvider extends PackageServiceProvider
             ->hasCommand(ApiMercadolibreCommand::class);
     }
 
-    public function register(){
+    public function register()
+    {
 
 //        $this->loadRoutesFrom(__DIR__.'/routes/api-mercadolibre.php');
 
-        $this->app->bind('api-mercadolibre', function($app){
+        $this->app->bind('api-mercadolibre', function ($app) {
             return new ApiMercadolibre();
         });
     }
