@@ -1,12 +1,12 @@
 {
-    "name": "jaimenorato/api-mercadolibre",
+    "name": "iznotek/api-mercadolibre",
     "description": "Es te paquete permite integrar la api de mercado libre, para la conexión con esta plataforma y la sincronización de productos con la misma",
     "keywords": [
-        "JaimeNorato",
+        "iznotek",
         "laravel",
         "api-mercadolibre"
     ],
-    "homepage": "https://github.com/jaimenorato/api-mercadolibre",
+    "homepage": "https://github.com/iznotek/api-mercadolibre",
     "license": "MIT",
     "authors": [
         {
